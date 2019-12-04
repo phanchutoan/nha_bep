@@ -1,3 +1,4 @@
+1. Clone https://github.com/tastyigniter/TastyIgniter.git into folder src/TastyIgniter
 1. docker-compose up -d
 
 2. ssh into app container
