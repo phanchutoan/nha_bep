@@ -1,0 +1,28 @@
+version: '2'
+services:
+ app:
+  image: phanchutoan/tasty:first
+  # build: .
+  hostname: tasty
+  ports:
+    - "8001:80"
+  volumes:
+    - ./src/TastyIgniter:/var/www/html/
+  environment:
+    - MYSQL_HOSTNAME=db
+    - MYSQL_DATABASE=tastyigniter
+    - MYSQL_USER=tastyigniter
+    - MYSQL_PASSWORD=somepassword
+ db:
+  image: mariadb
+  container_name: tasty_db
+  volumes:
+  - db_data:/var/lib/mysql
+  environment:
+  - MYSQL_RANDOM_ROOT_PASSWORD=yes
+  - MYSQL_DATABASE=tastyigniter
+  - MYSQL_USER=tastyigniter
+  - MYSQL_PASSWORD=somepassword
+volumes:
+  db_data:
+    driver: local

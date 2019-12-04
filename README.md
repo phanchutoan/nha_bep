@@ -1,29 +1,16 @@
-# TastyIgniter Docker
+1. docker-compose up -d
 
-clone the repo
+2. ssh into app container
 
-    git clone https://github.com/ThisIsQasim/TastyIgniter
+3. insall composer 
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');" && \
+    php composer.phar install
+4. Install app 
+    php artisan igniter:install
 
-Run with docker compose for automatic database configuration
-
-    cd TastyIgniter
-    docker-compose up -d
-    
-Browse to port 8001 of your docker host and setup
-
-
-Alternatively if you don't want to use docker compose you can run it manually
-
-build the docker image
-
-    cd TastyIgniter
-    docker build -t TastyIgniter .
-    
-Run the docker
-
-    docker run -d -p 80:80 TastyIgniter
-    
-Run the setup and connect to a mysql db.
-
-## Credits
-TastyIgniter: https://github.com/tastyigniter/TastyIgniter
+    DB infor:
+        - MYSQL_DATABASE=tastyigniter
+        - MYSQL_USER=tastyigniter
+        - MYSQL_PASSWORD=somepassword
