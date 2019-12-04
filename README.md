@@ -12,6 +12,6 @@
     php artisan igniter:install
 
     DB infor:
-        - MYSQL_DATABASE=tastyigniter
-        - MYSQL_USER=tastyigniter
-        - MYSQL_PASSWORD=somepassword
+      MYSQL_DATABASE=tastyigniter
+      MYSQL_USER=tastyigniter
+      MYSQL_PASSWORD=somepassword
